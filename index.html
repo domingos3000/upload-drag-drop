@@ -5,12 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Upload Files</title>
 		
-		<!-- CSS -->
-		
-		<link rel="stylesheet" href="./css/global.css" />
-		<link rel="stylesheet" href="./css/style.css" />
-		
-		
+		<!-- CSS | START-->
+		<link rel="stylesheet" type="text/css" href="./css/animate.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/global.css" />
+		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<!-- CSS | END-->
 	</head>
 	<body>
 		
@@ -33,31 +32,14 @@
 			
 			<input id="input-file-upload" type="file" multiple style="display: none;" />
 			
-			<div class="files-loaded">
-				<!-- <div class="file">
-						<div class="icon-file">
-								<div class="icon"></div>
-						</div>
-						
-						<div class="description-file">
-								<div class="box">
-										<div class="file-name-size">
-												<div class="name">Scann_158.pdf</div>
-												<div class="size">30 MB / 74 MB</div>
-										</div>
-										
-										<div class="icon"></div>
-								</div>
-								
-								<div class="file-progress">
-										<div class="progress" >
-												<div class="load" style="width: 50%;"></div>
-										</div>
-										<div class="status">50%</div>
-								</div>
-						</div>
-				</div> -->
-			</div>
+			<div class="files-loaded"></div>
+			
+			<!-- <div class="tools_error">
+					<div class="icon"></div>
+					<div class="text">Já existe um arquivo igual.</div>
+			</div> -->
+			
+			<button class="" type="submit" id="btn-submit" disabled="true">Enviar arquivos</button>
 		</div>
 		
 		

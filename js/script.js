@@ -2,9 +2,39 @@ const uploadZone = document.querySelector('#upload-zone')
 const input = document.getElementById('input-file-upload')
 const globalListHTML = document.querySelector('.files-loaded');
 const btnRemoveFile = document.getElementById('button-remove-file')
+const btnSubmit = document.getElementById('btn-submit')
+const boxUpload = document.querySelector('.box-upload')
+
 
 let storeFiles = [];
 
+
+
+const handleError = (msg = 'Falha!') => {
+
+	const div1 = document.createElement('div')
+	const div2 = document.createElement('div')
+	const div3 = document.createElement('div')
+	
+	div1.classList.add('tools_error', 'animate__animated', 'animate__zoomIn', 'animate__fast')
+	div2.classList.add('icon')
+	
+	div3.classList.add('text')
+	div3.innerText = msg
+
+	div1.appendChild(div2)
+	div1.appendChild(div3)
+
+	boxUpload.insertBefore(div1, input)
+
+	setTimeout(() => {
+		document.querySelector('.tools_error').className = 'tools_error animate__animated animate__zoomOut'
+	}, 3000)
+
+	setTimeout(() => {
+		document.querySelector('.tools_error').remove()
+	}, 4000)
+}
 
 function handlerFile(filename, size, status, index, typeIcon){
 
@@ -55,11 +85,13 @@ uploadZone.ondragenter = (e) => {
 	e.stopPropagation()
 
 	e.target.classList.add('dragenter')
+	e.target.querySelector('.label .text').innerHTML = "<p>Solte aqui os arquivos</p>"
 }
 
 uploadZone.ondragleave = (e) => {
 
 	e.target.classList.remove('dragenter')
+	e.target.querySelector('.label .text').innerHTML = `<h3>Importe seus arquivos</h3><p>Arraste ou clique para fazer upload</p>`
 }
 
 uploadZone.ondrop = (e) => {
@@ -67,11 +99,11 @@ uploadZone.ondrop = (e) => {
 	e.preventDefault()
 	e.stopPropagation()
 	e.target.classList.remove('dragenter')
+	e.target.querySelector('.label .text').innerHTML = `<h3>Importe seus arquivos</h3><p>Arraste ou clique para fazer upload</p>`
+
 
 	const files = [...e.dataTransfer.files];
-
 	filterFiles(files)
-
 }
 
 function filterFiles(filesArray){
@@ -84,7 +116,7 @@ function filterFiles(filesArray){
 			for(i in storeFiles){
 			
 				if(storeFiles[i].file.name == file.name){
-					return;
+					handleError('O arquivo adicionado recentemente ja existe!')
 				} else {
 					return file;
 				}
@@ -111,10 +143,14 @@ function readerFileAndStorage(files){
 		reader.readAsDataURL(file)
 
 		reader.addEventListener('loadend', (e) => {
-			console.log(e)
 
 			if(e.loaded == e.total){
-					storeFiles = [...storeFiles, {file, id: index}]
+
+				storeFiles = [...storeFiles, {file, id: index}]
+				start()
+			} else {
+
+				handleError('Arquivo demasiado grande, tente outro!')
 			}
 
 		})
@@ -124,7 +160,7 @@ function readerFileAndStorage(files){
 			let typeIcon;
 			let type = file.name.split('.').pop();
 
-			if(/(jpg|png|jpeg)/i.test(type)){
+			if(/(jpg|png|jpeg|jfif|gif|svg)/i.test(type)){
 				typeIcon = 'image'
 			} else if (/(docx|pdf|xlsx|pptx)/i.test(type)) {
 
@@ -186,8 +222,6 @@ function readerFileAndStorage(files){
 
 				updateElementHtml(document.querySelector(`[data-index="${index}"]`), percent)
 				
-
-				
 			})
 
 		})
@@ -209,15 +243,19 @@ function removeFileInStorage({target}){
 
 	const idFile = target.getAttribute('data-id')
 
-	console.log(idFile)
-
 	const updateStorage = storeFiles.filter(file => {
 
 		if(file.id == idFile){
-			console.log(idFile, idFile)
+
 			const fileFound = document.querySelector(`[data-index="${idFile}"]`)
+
+			fileFound.classList.add('animate__animated', 'animate__bounceOut')
 			
-			globalListHTML.removeChild(fileFound)
+			setTimeout(() => {
+				fileFound.remove()
+
+			}, 1000)
+			
 			return;
 		}
 
@@ -225,4 +263,21 @@ function removeFileInStorage({target}){
 	})
 
 	storeFiles = updateStorage
+	start()
 }
+
+
+function start(){
+
+	if(storeFiles.length == 0){
+		btnSubmit.classList.add('animate__animated', 'animate__shakeX', 'animate__fast')
+		btnSubmit.setAttribute('disabled', true)
+	} else {
+		btnSubmit.className = ''
+		btnSubmit.removeAttribute('disabled')
+
+	}
+
+}
+
+btnSubmit.onclick = start

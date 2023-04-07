@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 :root {
 
 	--bg-body: #FBFAFF;
@@ -49,9 +51,14 @@ html
 	font-family: 'Inter', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
+	border: 0;
+	list-style: none;
+	text-decoration: none;
 }
 
 
 body {
 	background-color: var(--bg-body);
+	padding: 1rem;
+	transition: 0.3s;
 }

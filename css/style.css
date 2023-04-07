@@ -63,6 +63,11 @@ body {
 	gap: .5rem;
 }
 
+.box-upload .files-loaded .file.animate__bounceOut{
+
+	background-color: #ffebeb;
+}
+
 .box-upload .files-loaded .icon-file {
 	height: 100%;
 	width: 48px;
@@ -210,3 +215,44 @@ body {
 	font-weight: 500;
 }
 
+
+#btn-submit {
+	padding: 1rem;
+	background-color: var(--c-text-1);
+	color: #fff;
+	border-radius: 4px;
+	transition: 0.3s;
+}
+
+#btn-submit:hover {
+	background-color: #644ec3;
+}
+
+#btn-submit:disabled {
+	background-color: #a590ff;
+	cursor: not-allowed;
+}
+
+.tools_error {
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+	gap: .5rem;
+
+	background: #ffe4e8;
+    padding: .3rem 0;
+    border-radius: 4px;
+}
+
+.tools_error .icon {
+	width: 24px;
+	height: 24px;
+	background-image: url('./../assets/warning.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.tools_error .text {
+	font-size: 	14px;
+	color: #ff0025;
+}

@@ -1,0 +1,57 @@
+:root {
+
+	--bg-body: #FBFAFF;
+	--bg-border: #C1B2FA;
+	--bg-upload-zone: #F3F0FF;
+	--bg-bar-progress: #E3E3ED;
+
+	--bg-one: #E9E3F8;
+	--bg-error: #F2D9D9;
+	--bg-accept: #DAF2D9;
+
+	--c-text-1: #7A5FEC;
+	--c-text-2: #746E82;
+	--c-text-3: #575361;
+	--c-text-4: #857E95;
+
+	--c-error: #E36363;
+	--c-accept: #73B172;
+
+	--opacityColor: 0.1;
+
+	--file-word-color: 			rgba(43, 87, 154, var(--opacityColor));
+	--file-excel-color: 		rgba(33, 115, 70, var(--opacityColor));
+	--file-powerpoint-color: 	rgba(183, 71, 42, var(--opacityColor));
+	--file-pdf-color: 			rgba(222, 0, 17, var(--opacityColor));
+
+	--file-word-color-0: 			rgb(43, 87, 154);
+	--file-excel-color-0: 		rgb(33, 115, 70);
+	--file-powerpoint-color-0: 	rgb(183, 71, 42);
+	--file-pdf-color-0: 			rgb(222, 0, 17);
+	
+	--file-doc-color: #000;
+	--file-image-color: 		rgba(255, 178, 54, var(--opacityColor));
+	--file-music-color: 		rgba(122, 95, 236, var(--opacityColor));
+	--file-video-color: 		var(--file-music-color);
+
+
+}
+
+
+*,
+*::before,
+*::after,
+html
+ {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+
+body {
+	background-color: var(--bg-body);
+}

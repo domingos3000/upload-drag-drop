@@ -1,0 +1,212 @@
+
+body {
+	display: grid;
+	place-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.box-upload {
+	max-width: 27.5rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.box-upload .upload-zone {
+	background-color: var(--bg-upload-zone);
+	height: 10rem;
+	border: 2px dashed var(--bg-border);
+	border-radius: 0.5rem;
+	display: grid;
+	place-items: center;
+}
+
+.box-upload .upload-zone.dragenter {
+	background-color: #dcd4ff;
+}
+
+.box-upload .upload-zone .label {
+	display: grid;
+	place-items: center;
+	text-align: center;
+	gap: 1rem;
+	pointer-events: none;
+}
+
+.box-upload .upload-zone .label .text h3{
+	font-weight: 600;
+	color: var(--c-text-1);
+}
+
+.box-upload .upload-zone .label .text p{
+	margin-top: .25rem;
+	color: var(--c-text-2);
+	font-size: 14px;
+}
+
+.box-upload .files-loaded {
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+}
+
+.box-upload .files-loaded .file {
+	height: 70px;
+	background-color: #fff;
+	box-shadow: 0px 4px 16px #EAE2FD;
+	border-radius: 4px;
+	padding: 8px;
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+}
+
+.box-upload .files-loaded .icon-file {
+	height: 100%;
+	width: 48px;
+	display: grid;
+	place-items: center;
+	border-radius: .25rem;
+} 
+
+.box-upload .files-loaded .file .icon-file .icon {
+	width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url('./../assets/file.svg');
+}
+
+.box-upload .files-loaded .file.image .icon-file .icon {
+	background-image: url('./../assets/file-image.svg');
+}
+
+.box-upload .files-loaded .file.word .icon-file .icon {
+	background-image: url('./../assets/file-word.svg');
+}
+
+.box-upload .files-loaded .file.pdf .icon-file .icon {
+	background-image: url('./../assets/file-pdf.svg');
+}
+
+.box-upload .files-loaded .file.excel .icon-file .icon {
+	background-image: url('./../assets/file-excel.svg');
+}
+
+.box-upload .files-loaded .file.powerpoint .icon-file .icon {
+	background-image: url('./../assets/file-powerpoint.svg');
+}
+
+.box-upload .files-loaded .file.video .icon-file .icon {
+	background-image: url('./../assets/file-video.svg');
+}
+
+.box-upload .files-loaded .file.music .icon-file .icon {
+	background-image: url('./../assets/file-music.svg');
+}
+
+.box-upload .files-loaded .file.word .icon-file {background-color: var(--file-word-color);}
+.box-upload .files-loaded .file.excel .icon-file {background-color: var(--file-excel-color);}
+.box-upload .files-loaded .file.powerpoint .icon-file {background-color: var(--file-powerpoint-color);}
+.box-upload .files-loaded .file.image .icon-file {background-color: var(--file-image-color);}
+.box-upload .files-loaded .file.video .icon-file {background-color: var(--file-video-color);}
+.box-upload .files-loaded .file.music .icon-file {background-color: var(--file-music-color);}
+.box-upload .files-loaded .file.pdf .icon-file {background-color: var(--file-pdf-color);}
+
+
+.box-upload .files-loaded .file .description-file {
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+	width: 100%;
+}
+
+.box-upload .files-loaded .file .description-file .box {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.box-upload .files-loaded .file.error .description-file .box .icon {
+	background-image: url('./../assets/try-again.svg');
+
+}
+
+.box-upload .files-loaded .file .description-file .box .icon {
+	width: 24px;
+	height: 24px;
+	background-image: url('./../assets/delete-x.svg');
+	background-position: center;
+	background-size: 13px;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+
+}
+
+.box-upload .files-loaded .file .description-file
+.file-name-size .name {
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--c-text-3);
+	margin-bottom: 0.2rem;
+	width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.box-upload .files-loaded .file .description-file
+.file-name-size .size {
+	font-size: 12px;
+	font-weight: 500;
+	color: var(--c-text-4);
+
+}
+
+.box-upload .files-loaded .file .description-file
+.file-progress {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: .8rem;
+}
+
+.box-upload .files-loaded .file .description-file
+.file-progress .progress{
+	background-color: var(--bg-bar-progress);
+	height: 8px;
+	border-radius: 999px;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+.box-upload .files-loaded .file .description-file
+.file-progress .load {
+	background: linear-gradient(45deg, #a790ff, var(--c-text-1));
+}
+
+
+
+.box-upload .files-loaded .file .description-file
+.file-progress .load {
+	transition: all .5s;
+	content: '';
+	height: 100%;
+	width: 0;
+	position: absolute;
+}
+
+.box-upload .files-loaded .file.error .description-file
+.file-progress .status {color: var(--c-error);}
+
+.box-upload .files-loaded .file .description-file
+.file-progress .status {
+	color: var(--c-text-4);
+	font-size: 12px;
+	font-weight: 500;
+}
+

@@ -1,8 +1,8 @@
 # UPLOAD PROJECT
-
+---
 Este projecto faz parte de uma obra de treinamento.
 Ela tem como objectivo fazer o upload (ou a subida) dos arquivos na nuvem.
----
+
 
 <div style="display: flex; flex-wrap: wrap;">
 <img src="https://user-images.githubusercontent.com/72228890/230694345-a823289e-07ac-489c-9b92-06012764d581.png" width="500px"/>

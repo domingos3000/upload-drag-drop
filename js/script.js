@@ -4,6 +4,7 @@ const globalListHTML = document.querySelector('.files-loaded');
 const btnRemoveFile = document.getElementById('button-remove-file')
 const btnSubmit = document.getElementById('btn-submit')
 const boxUpload = document.querySelector('.box-upload')
+const modalGlobal = document.querySelector('.modal-global')
 
 
 
@@ -129,7 +130,6 @@ function start(){
 	} else {
 		btnSubmit.className = ''
 		btnSubmit.removeAttribute('disabled')
-
 	}
 }
 
@@ -272,6 +272,16 @@ function readerFileAndStorage(files){
 	})		
 }
 
+// Função para enviar os arquivos
+
+function submit(){
+		if(storeFiles.length > 0){
+		modalGlobal.style.display = 'inherit';
+		modalGlobal.classList.add('animate__animated', 'animate__zoomIn', 'animate__fast')
+		return false;
+	}
+}
+
 
 // EVENTOS
 
@@ -316,3 +326,6 @@ input.onchange = (e) => {
 }
 
 btnSubmit.onclick = start
+btnSubmit.onclick = submit
+
+

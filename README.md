@@ -2,6 +2,7 @@
 
 Este projecto faz parte de uma obra de treinamento.
 Ela tem como objectivo fazer o upload (ou a subida) dos arquivos na nuvem.
+---
 
 <div style="display: flex; flex-wrap: wrap;">
 <img src="https://user-images.githubusercontent.com/72228890/230694345-a823289e-07ac-489c-9b92-06012764d581.png" width="500px"/>
@@ -16,12 +17,16 @@ Ela tem como objectivo fazer o upload (ou a subida) dos arquivos na nuvem.
 
 ## Funcionalidades
 
-- Upload com clique
-- Upload ao arrastar arquivos para zona de upload
-- Barra de progresso sobre o estado do arquivo
-- Apresentação do nome e tamanho do arquivo
-- Renderização de error, caso haja
+- Fazer upload com um clique
+- Fazer upload ao arrastar os arquivos para zona de drop
+- Apresentação do estado do arquivo com a ajuda da barra de progresso
+- Apresentação do nome e o tamanho do arquivo
+- Apresentação do icon do tipo do arquivo selecionado
+- Renderização de erro, caso haja
 - Animações
+- Cancelar o carregamento de um ficheiro, caso dê tempo
+- Eliminar ficheiros que terminaram de ser carregados, caso não precise mais
+- Evitar fazer upload do mesmo ficheiro 
 
 ## Minhas redes sociais
 ---

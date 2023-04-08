@@ -11,9 +11,9 @@ Ela tem como objectivo fazer o upload (ou a subida) dos arquivos na nuvem.
 
 ## 🚀 Tecnologias
 
-- [x] 🚀 HTML
-- [x] 🚀 CSS
-- [x] 🚀 VANILLA JS (JAVASCRIPT PURO, SEM USO DE BIBLIOTECAS OU FRAMEWORKS)
+- 🚀 HTML
+- 🚀 CSS
+- 🚀 VANILLA JS (JAVASCRIPT PURO, SEM USO DE BIBLIOTECAS OU FRAMEWORKS)
 
 ## 🔧 Funcionalidades
 

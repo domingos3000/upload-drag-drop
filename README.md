@@ -1,7 +1,10 @@
 # UPLOAD PROJECT
 ---
+Author: [Domingos Nkula Pedro](https://github.com/domingos3000)
+<br />
 Este projecto faz parte de uma obra de treinamento.
 Ela tem como objectivo fazer o upload (ou a subida) dos arquivos na nuvem.
+
 
 
 <div style="display: flex; flex-wrap: wrap;">
